@@ -23,23 +23,35 @@ Users pick a manga character to represent their bot, connect their wallet, and i
 ```
 manga-bot-frontend/
 ├── public/
-│   ├── index.html
-│   ├── favicon.ico
+│   ├── index.html          # Root HTML file
+│   ├── favicon.ico         # Manga-style icon
 │   └── assets/
 │       ├── images/         # Character sprites, background textures
 │       ├── sounds/         # "chin chin" and other effects
 │       └── fonts/          # Manga-inspired fonts
 ├── src/
-│   ├── components/         # Reusable UI components
-│   ├── pages/              # Home and Game pages
-│   ├── styles/             # CSS themes and color cues
-│   ├── utils/              # Wallet + sound helpers
-│   ├── App.jsx             # Root React component
-│   └── index.js            # Entry point
+│   ├── components/
+│   │   ├── CharacterSelect.jsx   # UI for picking manga avatars
+│   │   ├── WalletConnect.jsx     # Connect wallet button
+│   │   ├── DemoButton.jsx        # Demo install button
+│   │   ├── DisclaimerBox.jsx     # Entertainment-only disclaimer
+│   │   └── MangaButton.jsx       # Stylized buttons with color cues
+│   ├── pages/
+│   │   ├── Home.jsx              # Main landing page
+│   │   └── Game.jsx              # Bot install/interaction page
+│   ├── styles/
+│   │   ├── colors.css            # Psychological color scheme
+│   │   ├── manga-theme.css       # Curtain textures, panel effects
+│   │   └── buttons.css           # Speech bubble button styles
+│   ├── utils/
+│   │   ├── wallet.js             # Wallet integration logic
+│   │   ├── sound.js              # Play sound effects
+│   │   └── analytics.js          # Track user interactions
+│   ├── App.jsx                   # Root React component
+│   └── index.js                  # Entry point
 ├── package.json
 ├── README.md
 └── vite.config.js / next.config.js
-```
 
 ---
 
