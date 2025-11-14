@@ -1,0 +1,7 @@
+Notes for Claude
+Framework: React (with Vite or Next.js) is a good fit for modular components.
+Assets: Put your manga characters and textures in public/assets/images.
+Sound effects: Store .mp3 or .wav in public/assets/sounds and trigger via sound.js.
+Disclaimer: Make it a persistent component styled like a manga narrator box.
+Wallet integration: Use ethers.js or wagmi inside utils/wallet.js.
+Psychological colors: Define them in styles/colors.css (e.g., --buy-green, --alert-red).
