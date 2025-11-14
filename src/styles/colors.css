@@ -1,0 +1,58 @@
+:root {
+  --buy-green: #28a745;
+  --alert-red: #dc3545;
+  --info-blue: #007bff;
+  --neutral-gray: #6c757d;
+  --ink-black: #111111;
+  --paper-white: #ffffff;
+}
+
+/* Utility classes for text colors */
+.text-buy {
+  color: var(--buy-green);
+}
+
+.text-alert {
+  color: var(--alert-red);
+}
+
+.text-info {
+  color: var(--info-blue);
+}
+
+.text-neutral {
+  color: var(--neutral-gray);
+}
+
+.text-ink {
+  color: var(--ink-black);
+}
+
+.text-paper {
+  color: var(--paper-white);
+}
+
+/* Background utility classes */
+.bg-buy {
+  background-color: var(--buy-green);
+}
+
+.bg-alert {
+  background-color: var(--alert-red);
+}
+
+.bg-info {
+  background-color: var(--info-blue);
+}
+
+.bg-neutral {
+  background-color: var(--neutral-gray);
+}
+
+.bg-ink {
+  background-color: var(--ink-black);
+}
+
+.bg-paper {
+  background-color: var(--paper-white);
+}

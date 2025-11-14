@@ -1,0 +1,250 @@
+/* DemoButton component styles */
+.demo-button-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.demo-button {
+  min-width: 250px;
+  font-size: 1.25rem;
+  padding: 1rem 2rem;
+}
+
+/* Speed-lines overlay animation */
+.speed-lines-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9998;
+  pointer-events: none;
+  animation: speed-lines-fade 2s ease-out forwards;
+}
+
+.speed-lines-content {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes speed-lines-fade {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Level Up panel */
+.level-up-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  padding: 3rem 4rem;
+  background: white;
+  animation: level-up-appear 2.5s ease-out forwards;
+  min-width: 400px;
+  text-align: center;
+}
+
+@keyframes level-up-appear {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3) rotate(-10deg);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2) rotate(5deg);
+  }
+  25% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  75% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.5) rotate(0deg);
+  }
+}
+
+.level-up-content {
+  position: relative;
+}
+
+.level-up-text {
+  font-size: 4rem;
+  margin: 0 0 1rem 0;
+  color: var(--buy-green);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  animation: text-pulse 0.5s ease-in-out 2;
+}
+
+@keyframes text-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.level-up-subtitle {
+  font-size: 1.25rem;
+  margin: 0 0 1rem 0;
+  font-weight: bold;
+  color: var(--ink-black);
+}
+
+.level-up-stars {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 2rem;
+}
+
+.star {
+  display: inline-block;
+  color: #ffd700;
+  animation: star-twinkle 0.8s ease-in-out infinite;
+  text-shadow:
+    0 0 10px rgba(255, 215, 0, 0.8),
+    0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.star:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.star:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes star-twinkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3) rotate(180deg);
+    opacity: 0.7;
+  }
+}
+
+/* Character requirement hint */
+.hint-box {
+  background: rgba(0, 123, 255, 0.1);
+  border: 2px solid var(--info-blue);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  max-width: 400px;
+  text-align: center;
+}
+
+.hint-text {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Installing state */
+.demo-button:disabled {
+  opacity: 0.8;
+  animation: installing-pulse 1s ease-in-out infinite;
+}
+
+@keyframes installing-pulse {
+  0%, 100% {
+    box-shadow:
+      3px 3px 0px rgba(0, 0, 0, 0.3),
+      0 0 0 0 rgba(0, 123, 255, 0);
+  }
+  50% {
+    box-shadow:
+      3px 3px 0px rgba(0, 0, 0, 0.3),
+      0 0 20px 5px rgba(0, 123, 255, 0.5);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .demo-button-wrapper {
+    padding: 1rem;
+  }
+
+  .demo-button {
+    min-width: auto;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.875rem 1.5rem;
+  }
+
+  .level-up-panel {
+    min-width: auto;
+    width: 90%;
+    max-width: 350px;
+    padding: 2rem 2.5rem;
+  }
+
+  .level-up-text {
+    font-size: 2.5rem;
+  }
+
+  .level-up-subtitle {
+    font-size: 1rem;
+  }
+
+  .level-up-stars {
+    font-size: 1.5rem;
+    gap: 0.75rem;
+  }
+
+  .hint-box {
+    max-width: 100%;
+  }
+
+  .hint-text {
+    font-size: 0.875rem;
+  }
+}
+
+/* Overlay backdrop for level-up panel */
+.level-up-panel::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+  animation: backdrop-fade 2.5s ease-out forwards;
+}
+
+@keyframes backdrop-fade {
+  0%, 75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

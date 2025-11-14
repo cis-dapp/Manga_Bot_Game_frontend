@@ -1,0 +1,212 @@
+/* Manga-styled speech-bubble buttons */
+.manga-btn {
+  position: relative;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 3px solid var(--ink-black);
+  border-radius: 12px;
+  background: var(--paper-white);
+  color: var(--ink-black);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow:
+    3px 3px 0px rgba(0, 0, 0, 0.3),
+    0 0 0 0 rgba(0, 0, 0, 0.1);
+  outline: none;
+  user-select: none;
+}
+
+/* Irregular border effect using clip-path */
+.manga-btn::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 12px;
+  background: transparent;
+  pointer-events: none;
+}
+
+/* Hover state */
+.manga-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow:
+    5px 5px 0px rgba(0, 0, 0, 0.3),
+    0 0 0 2px rgba(0, 0, 0, 0.1);
+  animation: wobble 0.3s ease-in-out;
+}
+
+/* Active/pressed state */
+.manga-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow:
+    1px 1px 0px rgba(0, 0, 0, 0.3),
+    0 0 0 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Wobble animation for outline */
+@keyframes wobble {
+  0%, 100% {
+    transform: translate(-2px, -2px) rotate(0deg);
+  }
+  25% {
+    transform: translate(-2px, -2px) rotate(-1deg);
+  }
+  75% {
+    transform: translate(-2px, -2px) rotate(1deg);
+  }
+}
+
+/* Buy variant - green */
+.manga-btn.buy {
+  background: var(--buy-green);
+  color: white;
+  border-color: var(--ink-black);
+}
+
+.manga-btn.buy:hover {
+  background: color-mix(in srgb, var(--buy-green) 90%, white);
+  box-shadow:
+    5px 5px 0px rgba(0, 0, 0, 0.3),
+    0 0 8px var(--buy-green);
+}
+
+/* Alert variant - red */
+.manga-btn.alert {
+  background: var(--alert-red);
+  color: white;
+  border-color: var(--ink-black);
+}
+
+.manga-btn.alert:hover {
+  background: color-mix(in srgb, var(--alert-red) 90%, white);
+  box-shadow:
+    5px 5px 0px rgba(0, 0, 0, 0.3),
+    0 0 8px var(--alert-red);
+}
+
+/* Info variant - blue */
+.manga-btn.info {
+  background: var(--info-blue);
+  color: white;
+  border-color: var(--ink-black);
+}
+
+.manga-btn.info:hover {
+  background: color-mix(in srgb, var(--info-blue) 90%, white);
+  box-shadow:
+    5px 5px 0px rgba(0, 0, 0, 0.3),
+    0 0 8px var(--info-blue);
+}
+
+/* Neutral variant */
+.manga-btn.neutral {
+  background: var(--neutral-gray);
+  color: white;
+  border-color: var(--ink-black);
+}
+
+.manga-btn.neutral:hover {
+  background: color-mix(in srgb, var(--neutral-gray) 90%, white);
+}
+
+/* Disabled state */
+.manga-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2) !important;
+}
+
+.manga-btn:disabled:hover {
+  animation: none;
+}
+
+/* Sound-on-click indicator */
+.manga-btn[data-sound-on-click="true"]::after {
+  content: '♪';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  background: var(--info-blue);
+  color: white;
+  border: 2px solid var(--ink-black);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.manga-btn[data-sound-on-click="true"]:hover::after {
+  animation: pulse-sound 0.6s ease-in-out infinite;
+}
+
+@keyframes pulse-sound {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Active state indicator */
+.manga-btn.active {
+  background: var(--ink-black);
+  color: var(--paper-white);
+  box-shadow:
+    inset 2px 2px 4px rgba(0, 0, 0, 0.5),
+    0 0 0 2px var(--ink-black);
+}
+
+.manga-btn.active.buy {
+  background: color-mix(in srgb, var(--buy-green) 80%, black);
+}
+
+.manga-btn.active.alert {
+  background: color-mix(in srgb, var(--alert-red) 80%, black);
+}
+
+.manga-btn.active.info {
+  background: color-mix(in srgb, var(--info-blue) 80%, black);
+}
+
+/* Size variants */
+.manga-btn.small {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.manga-btn.large {
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  border-width: 4px;
+}
+
+/* Full width option */
+.manga-btn.full-width {
+  width: 100%;
+  display: block;
+}
+
+/* Icon support */
+.manga-btn .icon {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.manga-btn .icon-right {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
