@@ -1,0 +1,53 @@
+/* DisclaimerBox component styles */
+.disclaimer-box {
+  /* Fixed positioning at bottom */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+
+  /* Slight opacity by default */
+  opacity: 0.7;
+
+  /* Smooth transition for hover effect */
+  transition: opacity 0.3s ease;
+
+  /* Ensure proper stacking */
+  margin: 0;
+
+  /* Add subtle shadow to stand out from content */
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Full opacity on hover */
+.disclaimer-box:hover {
+  opacity: 1;
+}
+
+/* Disclaimer text styling */
+.disclaimer-text {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .disclaimer-text {
+    font-size: 0.8rem;
+  }
+
+  .disclaimer-box {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Print styles - hide in print */
+@media print {
+  .disclaimer-box {
+    display: none;
+  }
+}
