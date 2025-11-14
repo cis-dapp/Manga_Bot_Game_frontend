@@ -1,0 +1,87 @@
+## Draft (Manga Bot Game)
+
+```markdown
+# Manga Bot Game 🎮🇯🇵
+
+An experimental Web3 frontend project that gamifies bot installation with manga-style aesthetics.  
+Users pick a manga character to represent their bot, connect their wallet, and interact through playful UI elements.  
+**Disclaimer:** This is for entertainment only. Human behavior experimental project. Not financial advice.
+
+---
+
+## ✨ Features
+- **Manga Characters**: Choose avatars (e.g., red-haired girl, user-inspired character).
+- **Wallet Integration**: Connect via ethers.js.
+- **Gamified Install**: Demo button animates character "jumping" into wallet.
+- **Psychological Colors**: Buy-green, alert-red, info-blue for cues.
+- **Sound Effects**: Small "chin chin" sounds on actions.
+- **Persistent Disclaimer**: Styled like a manga narrator box.
+
+---
+
+## 📂 Project Structure
+```
+manga-bot-frontend/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   └── assets/
+│       ├── images/         # Character sprites, background textures
+│       ├── sounds/         # "chin chin" and other effects
+│       └── fonts/          # Manga-inspired fonts
+├── src/
+│   ├── components/         # Reusable UI components
+│   ├── pages/              # Home and Game pages
+│   ├── styles/             # CSS themes and color cues
+│   ├── utils/              # Wallet + sound helpers
+│   ├── App.jsx             # Root React component
+│   └── index.js            # Entry point
+├── package.json
+├── README.md
+└── vite.config.js / next.config.js
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+- A Web3 wallet (e.g., MetaMask)
+
+### Installation
+```bash
+git clone https://github.com/yourusernam/manga-bot-frontend.git
+cd manga-bot-frontend
+npm install
+```
+
+### Development
+```bash
+npm run dev
+```
+
+### Build
+```bash
+npm run build
+```
+
+---
+
+## 🧩 Tech Stack
+- **React** (Vite or Next.js)
+- **ethers.js** for wallet integration
+- **CSS** for manga-style themes
+- **Custom assets** (images, sounds, fonts)
+
+---
+
+## ⚠️ Disclaimer
+This project is for entertainment and experimental purposes only.  
+It does not provide financial advice or trading recommendations.  
+Use at your own risk.
+```
+
+---
+
