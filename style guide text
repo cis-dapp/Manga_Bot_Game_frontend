@@ -1,0 +1,53 @@
+# Style Guide: Manga Bot Game Frontend
+
+## Visual Theme
+- **Overall aesthetic:** Japanese manga panel style.
+- **Backgrounds:** Curtain-texture patterns, bold contrasts (black/white with splashes of red or pastel).
+- **Characters:** 
+  - Red-haired, pale-skinned girl with slim mouth.
+  - User-inspired avatar (placeholder image).
+- **UI Elements:** 
+  - Buttons styled like manga speech bubbles with thick outlines.
+  - Speed lines and panel effects for animations.
+- **Fonts:** Use manga-inspired fonts (handwritten or bold comic styles).
+- **Colors (psychological cues):**
+  - Buy-green: #28a745
+  - Alert-red: #dc3545
+  - Info-blue: #007bff
+  - Neutral-gray: #6c757d
+
+## Audio
+- **Primary sound effect:** "chin chin" (small bell-like chime).
+- **Usage:** Play on button clicks, wallet connect, character selection.
+- **Optional effects:** "ding" or "level up" sounds for successful actions.
+- **Volume:** Subtle, not intrusive; user should be able to toggle sounds.
+
+## UX / Interaction
+- **Character Selection:** 
+  - Avatars displayed with manga-style frames.
+  - Selection triggers sound + highlight effect.
+- **Wallet Connect:** 
+  - Button styled as a manga power-up bubble.
+  - Status displayed in manga narrator text.
+- **Demo Button:** 
+  - Animates character "jumping" into wallet with speed lines.
+- **Disclaimer:** 
+  - Persistent at bottom of page.
+  - Styled like a manga narrator box (black outline, white fill).
+  - Text: "This is for entertainment only. Human behavior experimental project."
+
+## Layout
+- **Home Page:** 
+  - Title styled like manga panel text.
+  - CharacterSelect, WalletConnect, DemoButton, DisclaimerBox.
+- **Game Page:** 
+  - Shows chosen character interacting with wallet.
+  - Manga-style "LEVEL UP" text when bot is installed.
+  - Use MangaButton for actions.
+
+## Rules
+- Always keep disclaimer visible.
+- All buttons must trigger sound effects.
+- Animations should use manga tropes (speed lines, panel transitions).
+- Colors must follow psychological cues strictly.
+- Keep components modular and reusable.
